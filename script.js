@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
             tab_box.forEach(el => el.classList.remove('responsive'));
             menu.forEach(el => el.classList.remove('responsive'));
             liststyle.forEach(el => el.classList.remove('responsive'));
-            tab_btn.forEach(el => el.classList.add('responsive'));
-            information.forEach(el => el.classList.add('responsive'));
+            tab_btn.forEach(el => el.classList.remove('responsive'));
+            information.forEach(el => el.classList.remove('responsive'));
             stats.forEach(el => el.classList.remove('respon'));
 //            .forEach(el => el.classList.add('responsive'));
 //            .forEach(el => el.classList.add('responsive'));
