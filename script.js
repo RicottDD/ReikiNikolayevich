@@ -1,101 +1,99 @@
-const tabs= document.querySelectorAll('.tab_btn');
-const content= document.querySelectorAll('.content');
-const flex_2= document.querySelectorAll('.flex_2')
+document.addEventListener('DOMContentLoaded', function () {
+    function revisarVentana() {
+        const ancho = window.innerWidth;
+        const der = document.querySelectorAll('.der')
+        const stats = document.querySelectorAll('.stats')
+        const vod2 = document.querySelectorAll('.vod2')
+        const view= document.querySelectorAll('.view');
+        const menu1= document.querySelectorAll('.menu1');
+        const menu2= document.querySelectorAll('.menu2');
+        const tab_box= document.querySelectorAll('.tab_box');
+        const menu= document.querySelectorAll('.menu');
+        const liststyle= document.querySelectorAll('.liststyle');
+        const tab_btn= document.querySelectorAll('.tab_btn');
+        const information= document.querySelectorAll('.information');
+//        const menu= document.querySelectorAll('.menu');
+//        const menu= document.querySelectorAll('.menu');
+
+        if (ancho <= 1440){
+            der.forEach(el => el.classList.add('active'));
+        } else {
+            der.forEach(el => el.classList.remove('active'));
+        }
+
+        if (ancho <= 1800){
+            stats.forEach(el => el.classList.add('responsive'));
+            vod2.forEach(el => el.classList.add('responsive'));
+        } else {
+            stats.forEach(el => el.classList.remove('responsive'));
+            vod2.forEach(el => el.classList.remove('responsive'));
+        }
+
+        if (ancho <= 1200){
+            view.forEach(el => el.classList.add('responsive'));
+            menu1.forEach(el => el.classList.add('responsive'));
+            menu2.forEach(el => el.classList.add('responsive'));
+            tab_box.forEach(el => el.classList.add('responsive'));
+            menu.forEach(el => el.classList.add('responsive'));
+            liststyle.forEach(el => el.classList.add('responsive'));
+            tab_btn.forEach(el => el.classList.add('responsive'));
+            information.forEach(el => el.classList.add('responsive'));
+            stats.forEach(el => el.classList.add('respon'));
+//            .forEach(el => el.classList.add('responsive'));
+//            .forEach(el => el.classList.add('responsive'));
+        } else {
+            view.forEach(el => el.classList.remove('responsive'));
+            menu1.forEach(el => el.classList.remove('responsive'));
+            menu2.forEach(el => el.classList.remove('responsive'));
+            tab_box.forEach(el => el.classList.remove('responsive'));
+            menu.forEach(el => el.classList.remove('responsive'));
+            liststyle.forEach(el => el.classList.remove('responsive'));
+            tab_btn.forEach(el => el.classList.add('responsive'));
+            information.forEach(el => el.classList.add('responsive'));
+            stats.forEach(el => el.classList.remove('respon'));
+//            .forEach(el => el.classList.add('responsive'));
+//            .forEach(el => el.classList.add('responsive'));
+        }
+
+    }
+    window.addEventListener('load', revisarVentana);
+    window.addEventListener('resize', revisarVentana);
+});
+
+const cortina= document.querySelectorAll('.cortina')
 const open= document.querySelectorAll('.open')
 const close= document.querySelectorAll('.close')
-const container= document.querySelectorAll('.container')
-const bar= document.querySelectorAll('.bar')
+const main= document.querySelectorAll('.main')
 
-
-tabs.forEach((tab,index)=>{
-    tab.addEventListener('click',(e)=>{
-    tabs.forEach(tab=>{tab.classList.remove('active')});
-    tab.classList.add('active');
-    content.forEach(content=>{content.classList.remove('active')});
-    content[index].classList.add('active');
-
+open.forEach((open,index)=>{
+    open.addEventListener('click',()=>{
+        cortina[index].classList.add('active');
+        main[index].classList.add('active');
+    })
+})
+close.forEach((close, index) => {
+    close.addEventListener('click', () => {
+        cortina[index].classList.remove('active');
+        main[index].classList.remove('active');
     })
 })
 
-open.forEach((ope, index) => {
-    ope.addEventListener('click', () => {
-        flex_2.forEach(flex_2=> flex_2.classList.remove('active')); 
-        flex_2[index].classList.add('active');
-        container[index].classList.add('active');
-        bar[index].classList.add('active');
-
-
-    });
-
-});
-
-close.forEach((close, index) => {
-    close.addEventListener('click', () => {
-        flex_2[index].classList.remove('active');
-        container[index].classList.remove('active');
-        bar[index].classList.remove('active');
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    function revisarVentana() {
-    const ancho = window.innerWidth;
-    const alto = window.innerHeight;
-    const flex = document.getElementById('flex');
-    const box2 = document.getElementById('box2');
-    const shad = document.getElementById('shad');
-    const content = document.querySelectorAll('.content');
-    const pers = document.querySelectorAll('.pers');
-    const vod = document.querySelectorAll('.vod');
-    const tab_box = document.querySelectorAll('.tab_box');
-    const sep_1 = document.querySelectorAll('.sep_1');
-    const sep_2 = document.querySelectorAll('.sep_2');
-    const rom = document.querySelectorAll('.rom');
-    const line = document.querySelectorAll('.line');
-    const rod = document.querySelectorAll('.rod');
-    const item = document.querySelectorAll('.item');
-
-
-    if (ancho <= 1440) {
-        flex.classList.add('active');
-        box2.classList.add('active');
-        shad.classList.add('active');  // activa la clase
-    } else {
-        flex.classList.remove('active');
-        box2.classList.remove('active');
-        shad.classList.remove('active'); // la quita si se agranda
-    }
-
-    if (ancho <= 1740) {
-        content.forEach(el => el.classList.add('phone'));
-        pers.forEach(el => el.classList.add('phone'));
-        vod.forEach(el => el.classList.add('phone'));
-        tab_box.forEach(el => el.classList.add('phone'));
-        sep_1.forEach(el => el.classList.add('phone'));
-        sep_2.forEach(el => el.classList.add('phone'));
-        rom.forEach(el => el.classList.add('phone'));
-        line.forEach(el => el.classList.add('phone'));
-        rod.forEach(el => el.classList.add('phone'));
-    } else {
-        content.forEach(el => el.classList.remove('phone'));
-        pers.forEach(el => el.classList.remove('phone'));
-        vod.forEach(el => el.classList.remove('phone'));
-        tab_box.forEach(el => el.classList.remove('phone'));
-        sep_1.forEach(el => el.classList.remove('phone'));
-        sep_2.forEach(el => el.classList.remove('phone'));
-        rom.forEach(el => el.classList.remove('phone'));
-        line.forEach(el => el.classList.remove('phone'));
-        rod.forEach(el => el.classList.remove('phone'));
-    } 
-
-    if (alto <= 730) {
-        item.forEach(el => el.classList.add('active'));
-    } else {
-        item.forEach(el => el.classList.remove('active'));
-    }
-
-    }
-window.addEventListener('load', revisarVentana);
-window.addEventListener('resize', revisarVentana);
-});
+const tabs= document.querySelectorAll('.tab_btn');
+const view= document.querySelectorAll('.view');
+const liststyle= document.querySelectorAll('.liststyle');
+const anim= document.querySelectorAll('.anim');
+const listpoint= document.querySelectorAll('.listpoint');
+tabs.forEach((tab,index)=>{
+    tab.addEventListener('click',()=>{
+    tabs.forEach(tab=>{tab.classList.remove('active')});
+    tab.classList.add('active');
+    view.forEach(content=>{content.classList.remove('active')});
+    view[index].classList.add('active');
+    liststyle.forEach(liststyle=>{liststyle.classList.remove('active')});
+    liststyle[index].classList.add('active');
+    anim.forEach(anim=>{anim.classList.remove('active')});
+    anim[index].classList.add('active');
+    listpoint.forEach(listpoint=>{listpoint.classList.remove('active')});
+    listpoint[index].classList.add('active');
+    })
+})
