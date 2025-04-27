@@ -663,12 +663,10 @@ h6{
     overflow-x: hidden;
     z-index: 1;
     max-width: 1300px;
-    min-width: 500px;
     height: 100%;
     flex-shrink: 1;
 }
 .information.responsive{
-    overflow: visible;
     height: max-content;    
 }
 .subt{
